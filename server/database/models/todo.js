@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 
 const schema = {
@@ -23,6 +23,10 @@ const schema = {
     taskId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true
+    },
+    isImportant: {
+        type: Boolean,
+        default: false
     },
     _creator: {
         type: mongoose.Schema.Types.ObjectId,

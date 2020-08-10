@@ -58,8 +58,8 @@ const todoController = (() => ({
      * @param {*} response
      */
     get(request, response) {
-        console.log(request.user)
-        Todo.find({ _creator: request.user._id })
+        // console.log(request.user)
+        Todo.find({ taskId: request.params.id, _creator: request.user._id })
             .then(result => {
                 response.status(200).send({
                     ..._response,
@@ -133,7 +133,7 @@ const todoController = (() => ({
      */
     async patch(request, response) {
         const id = request.params.id
-        const body = _.pick(request.body, ['text', 'completed'])
+        const body = _.pick(request.body, ['text', 'completed', 'isImportant'])
 
         if (!ObjectID.isValid(id)) {
             console.log('Not a Valid ID')

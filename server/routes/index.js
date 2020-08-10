@@ -12,7 +12,7 @@ BaseRoute
     .post('/task', authenticate, taskController.create)
     .patch('/task/:id', authenticate, taskController.patch)
     .delete('/task/:id', authenticate, taskController.delete)
-    .get('/todo', authenticate, todoController.get)
+    .get('/task/todos/:id', authenticate, todoController.get)
     .post('/todo', authenticate, todoController.create)
     .get('/todo/:id', authenticate, todoController.fetch)
     .patch('/todo/:id', authenticate, todoController.patch)
