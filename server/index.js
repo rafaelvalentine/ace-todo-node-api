@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(morgan('combined'))
 app.use(helmet())
-    // app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Hello World!'))
 app.use('/api/v1', BaseRoute)
     // if (process.env.NODE_ENV === 'production') {
     //     // Set static folder.
